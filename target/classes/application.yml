@@ -1,0 +1,34 @@
+spring:
+  profiles: mysql
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/htdevteam?autoReconnect=true&useSSL=false
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLInnoDBDialect
+      ddl-auto: update # todo: in non-dev environments, comment this out:
+      
+employee.service:
+  name: 'test profile'
+
+spring.jmx:
+   enabled: false
+
+server:
+  port: 9999
+
+project:
+  name: spring-boot-restapi-demo
+  version: 0.1
+  description: boot-example default description
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
+
